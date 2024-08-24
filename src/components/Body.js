@@ -1,4 +1,5 @@
 import RestaurantCard from "./RestaurantCard";
+import Shimmer from "./Shimmer";
 
 import { useEffect, useState } from "react";
 
@@ -23,24 +24,28 @@ function Body() {
 
   const clickHandler = () => {
     const filteredRestaurant = listOfRestaurants.filter((restaurant) => {
-      return restaurant.info.avgRating > 4.2; 
+      return restaurant.info.avgRating > 4.2;
     });
     setListOfRestaurants(filteredRestaurant);
-  
   };
 
   return (
     <div className="body">
       <div className="search">
         <input type="text" placeholder="Search"></input>
-        <button className = "filter-btn" onClick={clickHandler}>Top rated Restaurants</button>
+        <button className="filter-btn" onClick={clickHandler}>
+          Top rated Restaurants
+        </button>
       </div>
+
       <div className="res-container">
-        {listOfRestaurants.map((restaurant) => {
-          return (
-            <RestaurantCard key={restaurant.info.id} resData={restaurant} />
-          );
-        })}
+        {listOfRestaurants.length === 0 ? (
+          <Shimmer></Shimmer>
+        ) : (
+          listOfRestaurants.map((restaurant) => 
+            (<RestaurantCard key={restaurant.info.id} resData={restaurant} />)
+          )
+        )}
       </div>
     </div>
   );
