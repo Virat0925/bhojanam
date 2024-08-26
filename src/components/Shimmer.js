@@ -3,7 +3,7 @@ const Shimmer = () => {
       <div>
         <div className="res-card">
 
-          Shimmer
+          
         </div>
       </div>
     );

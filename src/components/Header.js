@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 function Header() {
   const [logBtn, setLogBtn] = useState("Login");
 
@@ -7,13 +8,20 @@ function Header() {
   };
   return (
     <div className="header">
-      <img className="logo" src=".\logo.jpg"></img>
+      <img className="logo" src=".\logo.jpg" alt=""></img>
 
       <div className="nav-items">
         <ul>
-          <li>Home</li>
-          <li>About Us</li>
-          <li>Contact Us</li>
+          <li>
+            <Link to="/">Home</Link>
+          </li>
+          <li>
+            <Link to="/about">About Us</Link>
+          </li>
+          <li>
+            
+            <Link to="/contact">Contact Us</Link>
+          </li>
           <li>Cart</li>
           <li>
             <button className="auth-btn" onClick={logBtnHandler}>

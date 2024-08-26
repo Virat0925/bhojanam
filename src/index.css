@@ -70,10 +70,12 @@ code {
 
 .filter-btn{
   margin: 10px;
+  
   cursor: pointer;
 }
 
 .auth-btn{
-  margin: 10px;
+  
+  
   cursor: pointer;
 }
