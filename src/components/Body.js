@@ -3,6 +3,7 @@ import Shimmer from "./Shimmer";
 import { useEffect, useState } from "react";
 import { DATA_URL } from "../utils/constants";
 import { Link } from "react-router-dom";
+import useOnlineStatus from "../utils/useOnlineStatus.js";
 
 function Body() {
   const [listOfRestaurants, setListOfRestaurants] = useState([]);
@@ -26,6 +27,13 @@ function Body() {
     setFilteredRestaurant(
       json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants /* Keeping a Copy of Restaurant List */
     );
+  }
+
+  const onlineStatus = useOnlineStatus();
+
+  if (onlineStatus === false) {
+    return (<h1>Looks like you are Offline</h1>
+    )
   }
 
   const clickHandler = () => {
