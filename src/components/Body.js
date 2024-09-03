@@ -44,11 +44,12 @@ function Body() {
   };
 
   return (
-    <div className="body">
-      <div className="search">
+    <div className="">
+      <div className="m-2 p-2 ">
         <input
           type="text"
-          placeholder="Search"
+          className="border border-black border-solid px-1"
+          placeholder="Search here..."
           value={searchValue}
           onChange={(event) => {
             setSearchValue(event.target.value);
@@ -56,7 +57,7 @@ function Body() {
         />
 
         <button
-          className="search-btn"
+          className="m-4 px-4 py-1 bg-gray-200 rounded-lg"
           onClick={() => {
             // console.log(searchValue);
             const filteredRes = listOfRestaurants.filter((restaurant) =>
@@ -70,12 +71,15 @@ function Body() {
           Search
         </button>
 
-        <button className="filter-btn" onClick={clickHandler}>
-          Top rated Restaurants
+        <button
+          className="m-4 px-4 py-1 bg-gray-200 rounded-lg "
+          onClick={clickHandler}
+        >
+          Top Rated Restaurants
         </button>
       </div>
 
-      <div className="res-container">
+      <div className="flex flex-wrap">
         {listOfRestaurants.length === 0 ? (
           <Shimmer></Shimmer>
         ) : (
