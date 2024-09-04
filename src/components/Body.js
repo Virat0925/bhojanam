@@ -57,7 +57,7 @@ function Body() {
         />
 
         <button
-          className="m-4 px-4 py-1 bg-gray-200 rounded-lg"
+          className="px-4 py-1 bg-gray-100 border-2 rounded-3xl"
           onClick={() => {
             // console.log(searchValue);
             const filteredRes = listOfRestaurants.filter((restaurant) =>
@@ -72,7 +72,7 @@ function Body() {
         </button>
 
         <button
-          className="m-4 px-4 py-1 bg-gray-200 rounded-lg "
+          className="m-4 px-4 py-1 bg-gray-100 border-2 rounded-3xl "
           onClick={clickHandler}
         >
           Top Rated Restaurants

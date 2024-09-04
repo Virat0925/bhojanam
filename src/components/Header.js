@@ -14,7 +14,7 @@ function Header() {
 
   // console.log(onlineStatus)
   return (
-    <div className="m-1 bg-[#FE5005] flex justify-between shadow-lg">
+    <div className=" bg-[#FE5005] flex justify-between ">
       <img
         className="w-28"
         src="
@@ -39,13 +39,15 @@ function Header() {
             <Link to="/contact">Contact Us</Link>
           </li>
 
-          <li className="m-4 px-1 border border-solid border-black bg-white text-[#FE5005]">
-            <button className="auth-btn" onClick={logBtnHandler}>
+          <li className="m-4 px-2  text-[#FE5005] bg-gray-100 border-2 rounded-3xl">
+            <button
+              onClick={logBtnHandler}
+            >
               {logBtn}
             </button>
           </li>
-          <li className="p-4">
-            <button>:</button>
+          <li>
+            <button className="p-4 font-extrabold text-2xl">⋮</button>
           </li>
         </ul>
       </div>
