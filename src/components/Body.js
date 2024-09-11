@@ -20,13 +20,14 @@ function Body() {
     const response = await fetch(DATA_URL);
 
     const json = await response.json();
-    console.log(json);
+    
     setListOfRestaurants(
       json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants
     );
     setFilteredRestaurant(
       json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants /* Keeping a Copy of Restaurant List */
     );
+    
   }
 
   const onlineStatus = useOnlineStatus();
@@ -48,8 +49,8 @@ function Body() {
       <div className="m-2 p-2 ">
         <input
           type="text"
-          className="border border-black border-solid px-1"
-          placeholder="Search here..."
+          className=" border-gray-500 border-2 px-1 rounded-xl mr-2"
+          placeholder="Search here...🔍"
           value={searchValue}
           onChange={(event) => {
             setSearchValue(event.target.value);
@@ -59,7 +60,7 @@ function Body() {
         <button
           className="px-4 py-1 bg-gray-100 border-2 rounded-3xl"
           onClick={() => {
-            // console.log(searchValue);
+           
             const filteredRes = listOfRestaurants.filter((restaurant) =>
               restaurant.info.name
                 .toLowerCase()

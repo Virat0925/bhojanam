@@ -1,15 +1,13 @@
-import { useState } from "react";
+// import { useState } from "react";
 import ItemList from "./ItemList";
-const RestaurantCategory = ({ data }) => {
-    //   console.log(data);
+const RestaurantCategory = ({ data, showItemList, setShowIndex }) => {
+  //   console.log(data);
 
-    const [showItemList, setShowItemList] = useState(false)
-    
-    const accordionHandler = () => {
+  // const [showItemList, setShowItemList] = useState(false)
 
-        setShowItemList(!showItemList)
-        
-    }
+  const accordionHandler = () => {
+    setShowIndex();
+  };
   return (
     <div>
       <div className="w-6/12 mx-auto my-4 bg-gray-50 shadow-lg p-4 ">
