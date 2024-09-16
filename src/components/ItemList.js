@@ -1,7 +1,17 @@
+import { useDispatch } from "react-redux";
 import { CLOUBDINARY_URL } from "../utils/constants";
+import { addItem } from "../utils/cartSlice";
 
 const ItemList = ({ items }) => {
+
+  const dispatch = useDispatch()
+
+  const addItemHandler = (item) => {
+    dispatch(addItem(item))
+  }
+
   console.log(items);
+
   return (
     <div>
       {items.map((item) => (
@@ -28,7 +38,9 @@ const ItemList = ({ items }) => {
               alt="item-image"
               className="w-40"
             ></img>
-            <button className="px-[60px] py-2 shadow-lg bg-gray-150 text-[#1BA672] font-bold rounded-lg text-lg hover:bg-gray-300">ADD</button>
+            <button className="px-[60px] py-2 shadow-lg bg-gray-150 text-[#1BA672] font-bold rounded-lg text-lg hover:bg-gray-300"
+            onClick={() => addItemHandler(item)}>
+              ADD</button>
           </div>
           
         </div>

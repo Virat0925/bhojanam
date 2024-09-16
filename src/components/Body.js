@@ -45,7 +45,7 @@ function Body() {
   };
 
   return (
-    <div className="">
+    <div className="w-11/12 m-auto">
       <div className="m-2 p-2 ">
         <input
           type="text"

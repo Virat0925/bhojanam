@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
 import logo from "../utils/logo.png";
 import UserContext from "../utils/UserContext";
+import { useSelector } from "react-redux";
 
 
 function Header() {
@@ -11,6 +12,8 @@ function Header() {
   const logBtnHandler = () => {
     logBtn === "Login" ? setLogBtn("Logout") :setLogBtn ("Login");
   };
+
+  const cartItems = useSelector((store) => store.cart.items )
 
   const onlineStatus = useOnlineStatus();
 
@@ -37,8 +40,15 @@ function Header() {
             <Link to="/contact">Contact Us</Link>
           </li>
 
+          <li className="p-4 text-lg">
+            <Link to="/cart">
+              🛒: {cartItems.length}</Link>
+          </li>
+
           <li className="m-4 px-2 pt-[3px] text-sm text-[#FE5005] bg-gray-100 border-2 rounded-3xl">
-            <Link to="/Authentication"><button onClick={logBtnHandler}>{logBtn}</button></Link>
+            <Link to="/authentication">
+              <button onClick={logBtnHandler}>{logBtn}</button>
+            </Link>
           </li>
           <li className="p-4">{data.loggedIn}</li>
           <li>

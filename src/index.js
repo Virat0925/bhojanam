@@ -3,12 +3,13 @@ import ReactDOM from 'react-dom/client';
 import "./index.css";
 import App from './App';
 import Body from './components/Body';
-// import About from './components/About';
+// import About from './components/About';  (Lazy Loading)
 import Contact from './components/Contact';
 import AuthenticationPage from './components/AuthenticationPage';
 import Error from './components/Error';
 import RestaurantMenu from './components/RestaurantMenu';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import Cart from './components/Cart';
 
 
 const About = lazy(() => import("./components/About"))
@@ -46,8 +47,12 @@ const appRouter = createBrowserRouter([
         element: <Contact />,
       },
       {
-        path: "/Authentication",
+        path: "/authentication",
         element: <AuthenticationPage />,
+      },
+      {
+        path: "/cart",
+        element: <Cart />,
       },
       {
         path: "/restaurant/:resId",

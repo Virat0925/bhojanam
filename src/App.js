@@ -4,6 +4,8 @@ import Header from "./components/Header";
 import Footer from "./components/Footer";
 import { Outlet } from "react-router-dom";
 import UserContext from "./utils/UserContext";
+import { Provider } from "react-redux";
+import appStore from "./utils/appStore";
 
 function App() {
 
@@ -18,11 +20,13 @@ function App() {
   
   return (
     <div className="App">
-      <UserContext.Provider value={{ loggedIn: userName, setUserName }}>
-      <Header />
-      <Outlet />
-      <Footer />
-      </UserContext.Provider>
+      <Provider store = {appStore}>
+        <UserContext.Provider value={{ loggedIn: userName, setUserName }}>
+          <Header />
+          <Outlet />
+          <Footer />
+        </UserContext.Provider>
+      </Provider>
     </div>
   );
 }

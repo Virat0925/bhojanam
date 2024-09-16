@@ -3,11 +3,11 @@ function RestaurantCard({ resData }) {
   return (
     <div className="w-90%">
       <div
-        className="p-2 m-4 w-[220px] h-[410px] bg-gray-100 rounded-lg hover:bg-[#FE5005] hover:text-white cursor-pointer flex flex-col justify-between 
+        className="p-2 m-4 w-[245px] h-[425px] bg-gray-100 rounded-xl hover:bg-[#FE5005] hover:text-white cursor-pointer flex flex-col justify-between 
       transition duration-300 ease-in-out transform hover:scale-95"
       >
         <img
-          className="aspect-square rounded-lg"
+          className="aspect-square rounded-2xl"
           src={CLOUBDINARY_URL + resData.info.cloudinaryImageId}
           alt="restaurant-image"
         ></img>
