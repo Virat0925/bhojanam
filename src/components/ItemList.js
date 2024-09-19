@@ -1,6 +1,7 @@
 import { useDispatch } from "react-redux";
 import { CLOUBDINARY_URL } from "../utils/constants";
 import { addItem } from "../utils/cartSlice";
+import CounterItem from "./CounterItem";
 
 const ItemList = ({ items }) => {
 
@@ -17,32 +18,31 @@ const ItemList = ({ items }) => {
       {items.map((item) => (
         <div
           key={item.card.info.id}
-          className="p-2 m-2  border-gray-200 border-b-2 text-left flex justify-between">
-          
+          className="p-2 m-2  border-gray-200 border-b-2 text-left flex justify-between"
+        >
           <div className="py-4 w-9/12 font-bold text-gray-600">
-                  <span>{item.card.info.name}</span>
-                  <br></br>
-            <span>₹
+            <span>{item.card.info.name}</span>
+            <br></br>
+            <span>
+              ₹
               {item.card.info.price
                 ? item.card.info.price / 100
                 : item.card.info.defaultPrice / 100}
             </span>
 
-            <p className="mt-12 text-sm font-thin pr-2">{item.card.info.description}</p>
-            
+            <p className="mt-12 text-sm font-thin pr-2">
+              {item.card.info.description}
+            </p>
           </div>
-          
+
           <div className="w-3/12">
             <img
               src={CLOUBDINARY_URL + item.card.info.imageId}
               alt="item-image"
               className="w-40"
             ></img>
-            <button className="px-[60px] py-2 shadow-lg bg-gray-150 text-[#1BA672] font-bold rounded-lg text-lg hover:bg-gray-300"
-            onClick={() => addItemHandler(item)}>
-              ADD</button>
+            <CounterItem item={item} />
           </div>
-          
         </div>
       ))}
     </div>
