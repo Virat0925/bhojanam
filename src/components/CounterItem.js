@@ -40,22 +40,19 @@ const CounterItem = ({item}) => {
   };
 
   return (
-    <div className="flex items-center p-4">
-      <button
-        className="bg-green-500 text-white px-4 py-2 rounded "
-        onClick={removeItemHandler}
-      >
-        -
-      </button>
+    <div>
+      <div className="flex bg-[#d3c4dd] rounded-xl  font-bold w-40 justify-between px-3 mt-2 py-2 shadow-lg  text-white">
+        <button className="text-center" onClick={removeItemHandler}>
+          ➖
+        </button>
 
-      <h1 className="text-2xl font-bold mb-4 "> {itemCount}</h1>
+        <h1 className="text-center text-xl text-[#674293]"> {itemCount}</h1>
 
-      <button
-        className="bg-red-500 text-white px-4 py-2 rounded"
-        onClick={() => addItemHandler()}
-      >
-        +
-      </button>
+        <button className="text-center " onClick={() => addItemHandler()}>
+          ➕
+        </button>
+      </div>
+
       <ToastContainer></ToastContainer>
     </div>
   );

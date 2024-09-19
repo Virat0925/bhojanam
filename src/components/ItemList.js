@@ -39,7 +39,7 @@ const ItemList = ({ items }) => {
             <img
               src={CLOUBDINARY_URL + item.card.info.imageId}
               alt="item-image"
-              className="w-40"
+              className="w-40 rounded-md"
             ></img>
             <CounterItem item={item} />
           </div>
