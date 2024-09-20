@@ -1,15 +1,13 @@
-import { useDispatch } from "react-redux";
+
 import { CLOUBDINARY_URL } from "../utils/constants";
-import { addItem } from "../utils/cartSlice";
+
 import CounterItem from "./CounterItem";
 
 const ItemList = ({ items }) => {
 
-  const dispatch = useDispatch()
+  
 
-  const addItemHandler = (item) => {
-    dispatch(addItem(item))
-  }
+  
 
   console.log(items);
 

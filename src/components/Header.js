@@ -1,7 +1,7 @@
 import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
-import logo from "../utils/logo.png";
+import logo from "../utils/images/logo.png";
 import UserContext from "../utils/UserContext";
 import { useSelector } from "react-redux";
 
@@ -21,7 +21,7 @@ function Header() {
   
   return (
     <div className=" bg-[#FE5005] flex justify-between shadow-xl ">
-      <img className="w-28" src={logo} alt=""></img>
+      <img className="w-28 opacity-60" src={logo} alt=""></img>
 
       <div className="flex items-center font-bold font-sans text-lg text-white  ">
         <ul className="flex ">
