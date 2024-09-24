@@ -1,5 +1,5 @@
 function Footer() {
-  return <div className="bg-gray-100">footer</div>;
+  return <div className="bg-[#02080C] text-center text-white font-bold text-xl">Bhojnam©️</div>;
 }
 
 export default Footer;

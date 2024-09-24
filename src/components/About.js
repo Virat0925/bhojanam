@@ -6,11 +6,9 @@ const About = () => {
 
     const {loggedIn} = useContext(UserContext)
     return (
-      <div>
+      <div className="min-h-screen">
         <h1>About</h1>
         <h2 className="font-bold">{loggedIn}</h2>
-
-      
       </div>
     );
 }

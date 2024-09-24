@@ -1,7 +1,7 @@
 const Grocery = () => { 
 
     return (
-      <div>
+      <div className="min-h-screen">
         <h1>Instant Grocery Store😍</h1>
       </div>
     );

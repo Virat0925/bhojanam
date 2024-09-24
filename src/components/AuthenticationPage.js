@@ -8,7 +8,6 @@ const AuthenticationPage = () => {
   const [isSignIn, setIsSignIn] = useState(true)
   const [errorMsg, setErrorMsg] = useState(null)
   
-  
   const {setUserName} = useContext(UserContext)
 
   const email = useRef(null)
@@ -18,7 +17,7 @@ const AuthenticationPage = () => {
   const validationHandler = () => {
 
     const message = formValidation(email.current.value, phoneNumber.current.value, username.current.value);
-    console.log(message);
+    // console.log(message);
     setErrorMsg(message);
   }
 
