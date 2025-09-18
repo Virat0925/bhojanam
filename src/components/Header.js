@@ -50,7 +50,7 @@ function Header() {
               <button onClick={logBtnHandler}>{logBtn}</button>
             </Link>
           </li>
-          <li className="p-4">{data.loggedIn}</li>
+          {/* <li className="p-4">{data.loggedIn}</li> */}
           <li>
             <button className="p-4 font-extrabold text-2xl">⋮</button>
           </li>
