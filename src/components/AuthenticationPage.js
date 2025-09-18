@@ -2,7 +2,7 @@ import React, { useContext, useState, useRef } from 'react'
 // import UserContext from '../utils/UserContext'
 // import { Link } from 'react-router-dom'
 import { formValidation } from '../utils/validate'
-import { createUserWithEmailAndPassword } from "firebase/auth";
+import {createUserWithEmailAndPassword, signInWithEmailAndPassword} from "firebase/auth";
 import { auth } from "../utils/firebase";
 
 const AuthenticationPage = () => {
@@ -19,7 +19,7 @@ const AuthenticationPage = () => {
 
   const validationHandler = () => {
 
-    const message = formValidation(email.current.value, phoneNumber.current.value, username.current.value, password.current.value);
+    const message = formValidation(email.current?.value || "", phoneNumber.current?.value || "", username.current?.value || "", password.current?.value || "");
     // console.log(message);
     setErrorMsg(message);
     if (message) return;
@@ -40,6 +40,18 @@ const AuthenticationPage = () => {
           // ..
         });
     } else {
+      signInWithEmailAndPassword(auth, email.current.value, password.current.value)
+        .then((userCredential) => {
+          // Signed in
+          const user = userCredential.user;
+          console.log(user)
+          // ...
+        })
+        .catch((error) => {
+          const errorCode = error.code;
+          const errorMessage = error.message;
+           setErrorMsg(errorCode + "-" + errorMessage);
+        });
     }
   }
 
@@ -69,9 +81,9 @@ const AuthenticationPage = () => {
         </div>
 
         <input
-          ref={username}
-          type="text"
-          placeholder="Username"
+          ref={email}
+          type="email"
+          placeholder="email"
           className="border-gray-500 border-2 rounded-md w-80 h-14 px-2 pb-2  m-1 text-sm font-semibold"
           // onChange={(event) => setUserName(event.target.value)}
         ></input>
@@ -79,9 +91,9 @@ const AuthenticationPage = () => {
         {isSignIn ? null : (
           <>
             <input
-              ref={email}
+              ref={username}
               type="text"
-              placeholder="Email"
+              placeholder="username"
               className="border-gray-500 border-2 rounded-md w-80 h-14 px-2 pb-2   m-1 text-sm font-semibold"
             ></input>
 
