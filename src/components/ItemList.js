@@ -5,10 +5,6 @@ import CounterItem from "./CounterItem";
 
 const ItemList = ({ items }) => {
 
-  
-
-  
-
   console.log(items);
 
   return (

@@ -14,7 +14,7 @@ function Body() {
     fetchData();
   }, []);
 
-  // console.log("Body") Checking for Reconcialation Cycle
+
 
   async function fetchData() {
     const response = await fetch(DATA_URL);
@@ -33,7 +33,7 @@ function Body() {
   const onlineStatus = useOnlineStatus();
 
   if (onlineStatus === false) {
-    return (<h1>Looks like you are Offline</h1>
+    return (<h1>Looks like you are Offline! Please, Try Again!!!</h1>
     )
   }
 

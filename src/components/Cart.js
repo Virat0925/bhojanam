@@ -1,7 +1,6 @@
 import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { clearCart } from '../utils/cartSlice'
-// import ItemList from './ItemList'
 import bgImage from "../utils/images/bg-image.jpg";
 import { Link } from 'react-router-dom';
 
@@ -22,13 +21,13 @@ const Cart = () => {
               <div className="mt-16 flex flex-col items-center justify-center">
                 <img className="" alt='' src={bgImage}></img>
                 <h1 className="text-center text-2xl font-bold text-gray-600 mt-2 p-2 ">
-                  Your cart is empty
+                  Your cart is empty!!!
                 </h1>
                 <h3 className="text-center text-sm font-light text-gray-800 ">
                   Go to home page and add some dishes
                 </h3>
                 <h2 className="text-center text-lg font-mono text-white border bg-[#FE5005] m-8 px-4 py-2 rounded-lg">
-                  <Link to="/"> SEE RESTAURANT NEAR YOU</Link>
+                  <Link to="/">SEE RESTAURANT NEAR YOU</Link>
                 </h2>
               </div>
             ) : (

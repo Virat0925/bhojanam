@@ -1,6 +1,4 @@
 import React, { useContext, useState, useRef } from 'react'
-// import UserContext from '../utils/UserContext'
-// import { Link } from 'react-router-dom'
 import { formValidation } from '../utils/validate'
 import {createUserWithEmailAndPassword, signInWithEmailAndPassword} from "firebase/auth";
 import { auth } from "../utils/firebase";
@@ -10,7 +8,7 @@ const AuthenticationPage = () => {
   const [isSignIn, setIsSignIn] = useState(true)
   const [errorMsg, setErrorMsg] = useState(null)
   
-  // const {setUserName} = useContext(UserContext)
+  
 
   const email = useRef(null)
   const phoneNumber = useRef(null);

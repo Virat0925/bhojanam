@@ -1,9 +1,6 @@
 // import { useState } from "react";
 import ItemList from "./ItemList";
 const RestaurantCategory = ({ data, showItemList, setShowIndex }) => {
-  //   console.log(data);
-
-  // const [showItemList, setShowItemList] = useState(false)
 
   const accordionHandler = () => {
     setShowIndex();
